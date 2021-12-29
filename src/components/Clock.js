@@ -17,6 +17,9 @@ class Clock extends React.Component {
         this.generate(event.target.value);
     }
 
+    componentDidMount() {
+        this.now();
+    }
 
     generate(time) {
 
@@ -36,12 +39,12 @@ class Clock extends React.Component {
 
         if (prev === 59 && minutes === 0) {
             hour += 1;
-            if (hour == 24) hour = 0;
+            if (hour === 24) hour = 0;
             let newTime = `${hour.toString().length === 1 ? "0" : ""}${hour}:00`;
             this.setState({ timeRaw: newTime });
         } else if (prev === 0 && minutes === 59) {
             hour -= 1;
-            if (hour == -1) hour = 23;
+            if (hour === -1) hour = 23;
             let newTime = `${hour.toString().length === 1 ? "0" : ""}${hour}:59`;
             this.setState({ timeRaw: newTime });
         }
@@ -97,15 +100,26 @@ class Clock extends React.Component {
 
     }
 
-    reset(event) {
+    now() {
 
-        event.preventDefault();
         let now = new Date();
         let hours = now.getHours().toString();
         let minutes = now.getMinutes().toString();
 
+        if (hours === "undefined" || minutes === "undefined") {
+            hours = "00";
+            minutes = "00";
+        }
+
         let nowString = `${hours.length > 1 ? hours : `0${hours}`}:${minutes.length > 1 ? minutes : `0${minutes}`}`;
         this.generate(nowString);
+    }
+
+    reset(event) {
+
+        event.preventDefault();
+        this.now();
+
     }
 
     render() {
