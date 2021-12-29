@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/klokke/static/css/main.912bdd96.css",
+    "main.js": "/klokke/static/js/main.bf65e1a4.js",
+    "static/js/787.e0378a01.chunk.js": "/klokke/static/js/787.e0378a01.chunk.js",
+    "index.html": "/klokke/index.html",
+    "main.912bdd96.css.map": "/klokke/static/css/main.912bdd96.css.map",
+    "main.bf65e1a4.js.map": "/klokke/static/js/main.bf65e1a4.js.map",
+    "787.e0378a01.chunk.js.map": "/klokke/static/js/787.e0378a01.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.912bdd96.css",
+    "static/js/main.bf65e1a4.js"
+  ]
+}
