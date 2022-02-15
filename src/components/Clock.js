@@ -35,6 +35,13 @@ class Clock extends React.Component {
         let hour = parseInt(args[0]);
         let minutes = parseInt(args[1]);
 
+
+        if (isNaN(hour) || isNaN(minutes)) {
+            hour = 0;
+            minutes = 0;
+            this.setState({ timeRaw: "00:00" });
+        }
+
         let prev = parseInt(this.state.previous.split(":")[1]);
 
         if (prev === 59 && minutes === 0) {
