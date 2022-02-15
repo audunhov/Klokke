@@ -1,0 +1,81 @@
+:root{
+  --primary-color: #0A0AF0;
+  
+  --hour-dial-offset: 0.7em;
+  --hour-dial-size: 40%;
+  --hour-dial-width: 5px;
+
+  --minute-dial-size: 50%;
+  --minute-dial-offset: var(--hour-dial-offset);
+  --minute-dial-width: 4px;
+}
+
+.App {
+  text-align: center;
+}
+
+.ticks {
+  width: 100%;
+  height: 100%;
+}
+
+.App-header {
+  background-color: var(--primary-color);
+  box-shadow: #00000030 0 1px 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around left;
+  color: white;
+}
+
+.App-header > h1 {
+  font-size: calc(10px + 3vmin);
+  padding-left: 3em;
+}
+
+.body {
+  padding: 2em;
+}
+
+
+.clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.analog-clock {
+  width: 200px;
+  height: 200px;
+  border: solid 3px #000;
+  border-radius: 50%;
+  position: relative;
+  background: #fff;
+}
+
+.dial {
+  position: absolute;
+}
+
+.small {
+  font-size: 6px;
+}
+
+.hours {
+  left: calc(50% - var(--hour-dial-width) / 2);
+  top: calc( 50% - var(--hour-dial-size) + var(--hour-dial-offset));
+  height: var(--hour-dial-size);
+  width: var(--hour-dial-width);
+  transform-origin: 50% calc(100% - var(--hour-dial-offset));
+  background-color: black;
+}
+
+.minutes {
+  left: calc(50% - var(--minute-dial-width) / 2);
+  top: calc( 50% - var(--minute-dial-size) + var(--minute-dial-offset));
+  height: var(--minute-dial-size);
+  width: var(--minute-dial-width);
+  background-color: red;
+  transform-origin: 50% calc(100% - var(--minute-dial-offset));
+
+}
